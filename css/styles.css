@@ -569,6 +569,8 @@ body {
   opacity: 0;
   visibility: hidden;
   pointer-events: none;
+  transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    visibility 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .is-open {
@@ -590,6 +592,7 @@ body {
     0 2px 1px 0 rgba(0, 0, 0, 0.2);
   background-color: #fcfcfc;
   padding: 72px 24px 24px 24px;
+  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .modal-title {
@@ -603,6 +606,8 @@ body {
 }
 
 .modal-close-btn {
+  padding: 0;
+  cursor: pointer;
   position: absolute;
   top: 24px;
   right: 24px;
@@ -614,12 +619,14 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    border 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .modal-close-btn:hover,
 .modal-close-btn:focus {
   background-color: #404bbf;
+  border: none;
 }
 
 .modal-close-icon {
@@ -636,17 +643,18 @@ body {
 }
 
 .label-input-wrapper {
+  margin-bottom: 8px;
 }
 
 .modal-label {
+  line-height: 1.17;
   font-weight: 400;
   font-size: 12px;
   line-height: 1.16667;
   letter-spacing: 0.04em;
   color: #8e8f99;
-  display: inline-block;
+  display: block;
   margin-bottom: 4px;
-  margin-top: 8px;
 }
 
 .input-wrapper {
@@ -687,9 +695,17 @@ body {
   fill: #4d5ae5;
 }
 
+.label-textarea-wrapper {
+  margin-bottom: 16px;
+}
+
 .modal-textarea {
+  line-height: 1.17;
+  font-size: 12px;
+  letter-spacing: 0.04em;
   height: 120px;
   padding: 8px 16px;
+  color: rgba(46, 47, 66, 0.4);
   resize: none;
 }
 
@@ -702,18 +718,17 @@ body {
 }
 
 .modal-field {
-  margin-top: 16px;
   margin-bottom: 24px;
 }
 
-.modal-check:checked + .modal-check-label .modal-check-box {
-  background-color: #4d5ae5;
-  border: 1px solid #404bbf;
+.modal-check:checked .modal-check-box {
+  background-color: ##404bbf;
+  border: none
   fill: #f4f4fd;
 }
 
 .modal-check-box {
-  display: flex;
+  display: inline-flex;
   justify-content: center;
   align-items: center;
   width: 16px;
@@ -724,11 +739,12 @@ body {
   background-color: transparent;
   fill: transparent;
   transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
-    border-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    border 250ms cubic-bezier(0.4, 0, 0.2, 1),
     fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .modal-check-label {
+  line-height: 1.17;
   font-weight: 400;
   font-size: 12px;
   line-height: 1.16667;
@@ -754,10 +770,13 @@ body {
   color: #fff;
   border-radius: 4px;
   padding: 16px 32px;
-  width: 169px;
+  min-width: 169px;
   height: 56px;
   box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.15);
   background: #4d5ae5;
   display: block;
   margin: 0 auto;
+  cursor: pointer;
+  border: none;
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
